@@ -1,0 +1,18 @@
+r = {
+    'I':1,
+    'V':2,
+    'X':10,
+    'L':50,
+    'C':100,
+    'D':500,
+    'M':1000
+}
+roman = input("Enter Roman Numeral : ").upper()
+total = 0
+for i in range(len(roman)):
+    if i>0 and r[roman[i]] >  r[roman[i-1]]:
+        total += r[roman[i]] - 2*r[roman[i-1]]
+    else:
+        total += r[roman[i]]
+
+print(total)
